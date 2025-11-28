@@ -19,7 +19,7 @@ DATA = {
         },
         "secondary_cta": {
             "label": "Download CV",
-            "href": "#contact",  # later you can point this to a PDF in /static
+            "href": "href": "/static/files/Mohammed_Tasfiqur_Rahman_CV.pdf",  # later you can point this to a PDF in /static
         },
         "socials": [
             {
@@ -259,3 +259,4 @@ DATA = {
         "note": "",
     },
 }
+
