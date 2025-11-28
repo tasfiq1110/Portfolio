@@ -18,9 +18,14 @@
         <a href="{{ data.hero.primary_cta.href }}" class="btn btn-primary">
           {{ data.hero.primary_cta.label }}
         </a>
-        <a href="{{ data.hero.secondary_cta.href }}" class="btn btn-ghost">
-          {{ data.hero.secondary_cta.label }}
-        </a>
+<a
+  href="{{ data.hero.secondary_cta.href }}"
+  class="btn btn-ghost"
+  download
+>
+  {{ data.hero.secondary_cta.label }}
+</a>
+
       </div>
 
       <div class="hero-socials">
@@ -264,3 +269,4 @@
 </section>
 
 {% endblock %}
+
