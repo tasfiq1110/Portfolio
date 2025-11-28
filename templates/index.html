@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+<section id="hero" class="section hero-section">
+  <div class="container hero-inner">
+    <div class="hero-text reveal-on-scroll">
+      <p class="hero-kicker">Unreal Engine Developer</p>
+      <h1 class="hero-title">
+        {{ data.hero.name }}<span class="accent">.</span>
+      </h1>
+      <h2 class="hero-subtitle">{{ data.hero.role }}</h2>
+      <p class="hero-tagline">{{ data.hero.tagline }}</p>
+      <p class="hero-summary">{{ data.hero.summary }}</p>
+
+      <div class="hero-cta">
+        <a href="{{ data.hero.primary_cta.href }}" class="btn btn-primary">
+          {{ data.hero.primary_cta.label }}
+        </a>
+        <a href="{{ data.hero.secondary_cta.href }}" class="btn btn-ghost">
+          {{ data.hero.secondary_cta.label }}
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        {% for social in data.hero.socials %}
+        <a href="{{ social.href }}" target="_blank" rel="noreferrer" aria-label="{{ social.label }}">
+          <i class="{{ social.icon }}"></i>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+   <div class="hero-visual reveal-on-scroll">
+  <div class="hero-orbit">
+    <div class="hero-orbit-glow"></div>
+
+    <div class="hero-orbit-scan"></div>
+
+    <div class="hero-orbit-ring hero-orbit-ring-outer"></div>
+    <div class="hero-orbit-ring hero-orbit-ring-middle"></div>
+    <div class="hero-orbit-ring hero-orbit-ring-inner"></div>
+
+    <div class="hero-orbit-core">
+      <span class="hero-orbit-label">UE</span>
+      <span class="hero-orbit-sub">REAL-TIME</span>
+    </div>
+
+    <div class="hero-orbit-orbiter hero-orbit-orbiter-1"></div>
+  </div>
+
+  <p class="hero-orbit-caption">
+    Real-time, high-fidelity <span>interactive experiences</span>.
+  </p>
+</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container section-inner reveal-on-scroll">
+    <h2 class="section-title">{{ data.about.title }}</h2>
+    <div class="section-grid two-col">
+      <div class="section-text">
+        {% for paragraph in data.about.content %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+      <div class="section-card highlights">
+        <h3>Highlights</h3>
+        <ul>
+          {% for item in data.about.highlights %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section section-alt">
+  <div class="container section-inner">
+    <h2 class="section-title reveal-on-scroll">{{ data.skills.title }}</h2>
+    <div class="cards-grid">
+      {% for group in data.skills.groups %}
+      <article class="card skill-card reveal-on-scroll">
+        <header>
+          <div class="icon-pill">
+            <i class="{{ group.icon }}"></i>
+          </div>
+          <h3>{{ group.name }}</h3>
+        </header>
+        <ul class="tag-list">
+          {% for skill in group.skills %}
+          <li class="tag">{{ skill }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container section-inner">
+    <h2 class="section-title reveal-on-scroll">{{ data.projects.title }}</h2>
+    <div class="cards-grid">
+      {% for project in data.projects['items'] %}
+      <article class="card project-card reveal-on-scroll">
+        <header class="card-header">
+          <h3>{{ project.name }}</h3>
+          <p class="muted">{{ project.role }}</p>
+        </header>
+
+        {% if project.youtube_id %}
+        <div class="project-media">
+          <div class="yt-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/{{ project.youtube_id }}"
+              title="{{ project.name }}"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        {% endif %}
+
+        <p class="card-body-text">{{ project.description }}</p>
+
+        <ul class="inline-list">
+          {% for tech in project.tech %}
+          <li class="chip">{{ tech }}</li>
+          {% endfor %}
+        </ul>
+
+        <div class="card-links">
+          {% for link in project.links %}
+          <a href="{{ link.href }}" target="_blank" rel="noreferrer">
+            {{ link.label }} <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          {% endfor %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section section-alt">
+  <div class="container section-inner">
+    <h2 class="section-title reveal-on-scroll">{{ data.experience.title }}</h2>
+    <div class="timeline">
+      {% for job in data.experience['items'] %}
+      <article class="timeline-item reveal-on-scroll">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>{{ job.role }} · <span class="accent">{{ job.company }}</span></h3>
+          <p class="muted">{{ job.period }} · {{ job.location }}</p>
+          <ul>
+            {% for detail in job.details %}
+            <li>{{ detail }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="container section-inner">
+    <h2 class="section-title reveal-on-scroll">{{ data.education.title }}</h2>
+    <div class="cards-grid">
+      {% for edu in data.education['items'] %}
+      <article class="card reveal-on-scroll">
+        <header>
+          <h3>{{ edu.degree }}</h3>
+          <p class="muted">{{ edu.institution }}</p>
+        </header>
+        <p class="muted">{{ edu.period }}</p>
+        <ul>
+          {% for detail in edu.details %}
+          <li>{{ detail }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section-alt">
+  <div class="container section-inner contact-grid reveal-on-scroll">
+    <div>
+      <h2 class="section-title">{{ data.contact.title }}</h2>
+      <p class="section-subtitle">{{ data.contact.subtitle }}</p>
+      <ul class="contact-meta">
+        <li><i class="fa-solid fa-location-dot"></i> {{ data.contact.location }}</li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:{{ data.contact.email }}">{{ data.contact.email }}</a>
+        </li>
+        <li><i class="fa-solid fa-user-clock"></i> {{ data.contact.availability }}</li>
+      </ul>
+      <p class="muted">{{ data.contact.note }}</p>
+    </div>
+
+    <form class="contact-form" method="post" action="{{ url_for('contact') }}">
+  
+  {% if contact_success %}
+  <p class="contact-success">
+    Thanks! Your message has been received.
+  </p>
+  {% endif %}
+
+  <div class="form-row">
+    <label for="name">Name</label>
+    <input 
+      id="name"
+      name="name"
+      type="text"
+      placeholder="Your name"
+      required
+    />
+  </div>
+
+  <div class="form-row">
+    <label for="email">Email</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      placeholder="your@email.com"
+      required
+    />
+  </div>
+
+  <div class="form-row">
+    <label for="message">Project details</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      placeholder="Tell me about the experience you want to build."
+      required
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">
+    Send Message
+  </button>
+</form>
+
+  </div>
+</section>
+
+{% endblock %}
