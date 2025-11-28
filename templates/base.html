@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ data.site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ data.site.description }}" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+  rel="stylesheet"
+/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body class="theme-dark preloading">
+
+  <!-- Big background portrait -->
+  <!-- Signature preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <svg
+        class="preloader-signature"
+        viewBox="0 0 900 160"
+        aria-hidden="true"
+      >
+        <text
+          x="50%"
+          y="50%"
+          text-anchor="middle"
+          dominant-baseline="middle"
+        >
+          Mohammed Tasfiqur Rahman
+        </text>
+      </svg>
+      <p class="preloader-subtitle">Unreal Engine Developer</p>
+    </div>
+  </div>
+
+  <div id="hero-photo" class="hero-photo"></div>
+
+  <div class="background-glow"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo">
+  <span class="logo-mark">{{ data.hero.logo }}</span>
+  <span class="logo-text">{{ data.hero.name }}</span>
+</a>
+
+
+      <nav class="nav" id="main-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; {{ data.hero.name }} · Unreal Engine Developer</p>
+      <p>Built with Python &amp; Flask.</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
