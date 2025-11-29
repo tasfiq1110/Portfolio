@@ -250,6 +250,23 @@ DATA = {
             }
         ],
     },
+data["certificates"] = {
+    "title": "Certifications",
+    "subtitle": "Proof of my continuous learning and specialization in game development and real-time 3D.",
+    "items": [
+        {
+            "name": "Unreal Engine C++ Developer",
+            "issuer": "Epic Games / Unreal Online Learning",
+            "year": "2024",
+            "image": "images/cert-ue-cpp.jpg",
+            "href": "https://example.com/ue-cpp-cert"  # put real link or leave "" 
+        },
+        
+    ],
+}
+
+
+	
     "contact": {
         "title": "Contact",
         "subtitle": "Let’s build something immersive.",
@@ -259,5 +276,6 @@ DATA = {
         "note": "",
     },
 }
+
 
 
