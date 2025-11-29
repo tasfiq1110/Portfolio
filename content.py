@@ -258,7 +258,7 @@ data["certificates"] = {
             "name": "Unreal Engine C++ Developer",
             "issuer": "Epic Games / Unreal Online Learning",
             "year": "2024",
-            "image": "images/cert-ue-cpp.jpg",
+            "image": "cert.jpeg",
             "href": "https://example.com/ue-cpp-cert"  # put real link or leave "" 
         },
         
@@ -276,6 +276,7 @@ data["certificates"] = {
         "note": "",
     },
 }
+
 
 
 
