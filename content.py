@@ -260,9 +260,9 @@ DATA = {
         "subtitle": "Proof of my continuous learning and specialization in game development and real-time 3D.",
         "items": [
             {
-                "name": "Unreal Engine C++ Developer",
-                "issuer": "Epic Games / Unreal Online Learning",
-                "year": "2024",
+                "name": "200 Hours Course complete certificate",
+                "issuer": "ICT DIVISION BANGLAADESH",
+                "year": "2022",
                 # put the image inside static/images and reference it like this:
                 "image": "images/cert.jpeg",
                 # optional external link (or set to "" if you don't have one)
@@ -280,3 +280,4 @@ DATA = {
         "note": "",
     },
 }
+
