@@ -198,7 +198,43 @@
     </div>
   </div>
 </section>
+<!-- CERTIFICATES -->
+<section id="certificates" class="section section-alt">
+  <div class="container section-inner">
+    <h2 class="section-title reveal-on-scroll">{{ data.certificates.title }}</h2>
+    <p class="section-subtitle reveal-on-scroll">
+      {{ data.certificates.subtitle }}
+    </p>
 
+    <div class="cert-grid">
+      {% for cert in data.certificates.items %}
+      <article class="cert-card reveal-on-scroll">
+        <div class="cert-media">
+          {% if cert.href %}
+          <a href="{{ cert.href }}" target="_blank" rel="noreferrer">
+            <img
+              src="{{ url_for('static', filename=cert.image) }}"
+              alt="{{ cert.name }} – {{ cert.issuer }}"
+            />
+          </a>
+          {% else %}
+          <img
+            src="{{ url_for('static', filename=cert.image) }}"
+            alt="{{ cert.name }} – {{ cert.issuer }}"
+          />
+          {% endif %}
+          <div class="cert-light-sheen"></div>
+        </div>
+        <div class="cert-meta">
+          <h3>{{ cert.name }}</h3>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+          <p class="cert-year">{{ cert.year }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 <!-- CONTACT -->
 <section id="contact" class="section section-alt">
   <div class="container section-inner contact-grid reveal-on-scroll">
@@ -266,5 +302,6 @@
 </section>
 
 {% endblock %}
+
 
 
