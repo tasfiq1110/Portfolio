@@ -37,28 +37,25 @@
       </div>
     </div>
 
-   <div class="hero-visual reveal-on-scroll">
-  <div class="hero-orbit">
-    <div class="hero-orbit-glow"></div>
+      <div class="hero-visual reveal-on-scroll">
+      <div class="hero-avatar">
+        <div class="hero-avatar-glow"></div>
+        <div class="hero-avatar-ring"></div>
+        <div class="hero-avatar-inner">
+          <img
+            src="{{ url_for('static', filename='images/hero-portrait.jpeg') }}"
+            alt="Mohammed Tasfiqur Rahman – Unreal Engine Developer"
+            class="hero-avatar-img"
+          />
+        </div>
+      </div>
 
-    <div class="hero-orbit-scan"></div>
-
-    <div class="hero-orbit-ring hero-orbit-ring-outer"></div>
-    <div class="hero-orbit-ring hero-orbit-ring-middle"></div>
-    <div class="hero-orbit-ring hero-orbit-ring-inner"></div>
-
-    <div class="hero-orbit-core">
-      <span class="hero-orbit-label">UE</span>
-      <span class="hero-orbit-sub">REAL-TIME</span>
+      <p class="hero-avatar-caption">
+        Real-time, high-fidelity <span>interactive experiences</span>.
+      </p>
     </div>
 
-    <div class="hero-orbit-orbiter hero-orbit-orbiter-1"></div>
-  </div>
 
-  <p class="hero-orbit-caption">
-    Real-time, high-fidelity <span>interactive experiences</span>.
-  </p>
-</div>
   </div>
 </section>
 
@@ -269,4 +266,5 @@
 </section>
 
 {% endblock %}
+
 
