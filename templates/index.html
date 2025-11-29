@@ -207,7 +207,8 @@
     </p>
 
     <div class="cert-grid">
-      {% for cert in data.certificates.items %}
+      {% for cert in data.certificates['items'] %}
+
       <article class="cert-card reveal-on-scroll">
         <div class="cert-media">
           {% if cert.href %}
@@ -302,6 +303,7 @@
 </section>
 
 {% endblock %}
+
 
 
 
